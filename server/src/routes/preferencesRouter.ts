@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { setPreferences } from "../controllers/preferencesController";
+import { definePreferences, setPreferences } from "../controllers/preferencesController";
 import { validateToken } from "../middlewares/validateToken";
 
 const preferencesRouter = Router();
 
+preferencesRouter.post("/preferences/:id", validateToken, definePreferences)
 preferencesRouter.put("/preferences/:id", validateToken, setPreferences)
 
 export default preferencesRouter;

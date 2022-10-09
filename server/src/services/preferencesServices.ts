@@ -15,3 +15,7 @@ export async function setPreferences(userId: number, preferences: Partial<Prefer
         throw {type: "Method not allowed", message: "Update fail!"};
     }
 }
+
+export async function definePreferences(userId: number, preferences: Partial<Preferences>) {
+   
+}

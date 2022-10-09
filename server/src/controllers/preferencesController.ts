@@ -9,3 +9,12 @@ export async function setPreferences(req: Request, res: Response){
 
     res.sendStatus(200);
 }
+
+export async function definePreferences(req: Request, res: Response) {
+    const userId = Number(req.params.id);
+    const preferences = req.body;
+
+    await preferencesService.definePreferences(userId, preferences);
+
+    res.sendStatus(201);
+}
