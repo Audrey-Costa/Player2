@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 
 export default async function errorHandlerMiddleware(error: Error | any, req: Request, res: Response, next: NextFunction){
+    console.log(error)
+    
     if (error.type === "Not Found"){
         return res.status(404).send(error.message)
     }
@@ -17,7 +19,7 @@ export default async function errorHandlerMiddleware(error: Error | any, req: Re
         return res.status(403).send(error.message);
     }
     if(error.type === "Method not allowed"){
-        return res.status(403).send(error.message);
+        return res.status(405).send(error.message);
     }
     return res.sendStatus(500);
 }
