@@ -13,6 +13,6 @@ export async function setPreferences(id: number, preferences: Partial<Preference
     return await prisma.preferences.update({where: {id}, data: preferences});
 }
 
-export async function getPreferences(id:number){
-    return
+export async function getPreferences(userId:number): Promise<Preferences>{
+    return  prisma.preferences.findFirst({where: {userId}});
 }
