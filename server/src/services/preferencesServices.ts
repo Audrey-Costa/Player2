@@ -35,3 +35,7 @@ export async function definePreferences(userId: number, preferences: Partial<Pre
         throw {type: "Method not allowed", message: "Preferences failed to be save!"};
     }
 }
+
+export async function getPreferences(params:any) {
+    
+}

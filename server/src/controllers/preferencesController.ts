@@ -18,3 +18,11 @@ export async function definePreferences(req: Request, res: Response) {
 
     res.sendStatus(201);
 }
+
+export async function getPreferences(req: Request, res: Response){
+    const userId = Number(req.params.id);
+
+    const preference = await preferencesService.getPreferences(userId);
+
+    res.status(200).send(preference);
+}
