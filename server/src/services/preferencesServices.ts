@@ -9,9 +9,9 @@ export async function setPreferences(userId: number, preferences: Partial<Prefer
         throw {type: "Not Found", message: "User not Found!"};
     }
 
-    const update = await preferencesRepository.setPreferences(userId, preferences);
-
-    if(!update){
+    try {
+        const update = await preferencesRepository.setPreferences(userId, preferences);
+    } catch (error) {
         throw {type: "Method not allowed", message: "Update fail!"};
     }
 }
