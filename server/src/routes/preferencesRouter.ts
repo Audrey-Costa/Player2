@@ -4,6 +4,6 @@ import { validateToken } from "../middlewares/validateToken";
 
 const preferencesRouter = Router();
 
-preferencesRouter.put("/preferences", validateToken, setPreferences)
+preferencesRouter.put("/preferences/:id", validateToken, setPreferences)
 
 export default preferencesRouter;
