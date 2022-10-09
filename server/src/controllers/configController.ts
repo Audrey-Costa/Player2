@@ -8,3 +8,9 @@ export async function getConfig(req: Request, res: Response){
     
     res.status(200).send(config);
 }
+
+export async function setConfig(req: Request, res: Response){
+    const userId = Number(req.params.id);
+
+    await configService.setConfig(userId);
+}
