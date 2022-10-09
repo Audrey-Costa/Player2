@@ -1,7 +1,7 @@
 import { prisma } from "../db/postgresDB";
 
 
-export async function get(userId: number) {
+export async function getConfig(userId: number) {
     const config = await prisma.users.findFirst(
         {where: {id: userId},
         select: {
