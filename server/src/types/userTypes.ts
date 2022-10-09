@@ -7,4 +7,4 @@ export type RegisterAuth = {
     confirmPassword: string;
 }
 
-export type LoginAuth = Omit<RegisterAuth, "firstName" | "lastName" | "age" | "confirmPassword">
+export type LoginAuth = Omit<RegisterAuth, "firstName" | "lastName" | "age" | "confirmPassword">;
