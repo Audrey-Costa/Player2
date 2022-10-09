@@ -13,3 +13,7 @@ export async function registerUser(newUser: RegisterAuth) {
     newUser.password = bcrypt.hashSync(newUser.password, 10);
     await authRepository.registerUser(newUser);
 }
+
+export async function login(params:any) {
+    
+}
