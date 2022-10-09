@@ -10,7 +10,7 @@ export async function setPreferences(userId: number, preferences: Partial<Prefer
     }
 
     try {
-        const update = await preferencesRepository.setPreferences(userId, preferences);
+        await preferencesRepository.setPreferences(userId, preferences);
     } catch (error) {
         throw {type: "Method not allowed", message: "Update fail!"};
     }
