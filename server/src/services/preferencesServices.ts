@@ -36,6 +36,12 @@ export async function definePreferences(userId: number, preferences: Partial<Pre
     }
 }
 
-export async function getPreferences(params:any) {
-    
+export async function getPreferences(userId: number) {
+    const preferences = await preferencesRepository.getPreferences(userId);
+
+    if(!preferences){
+        throw {type: "Not Found", message: "Preferences not Found!"};
+    }
+
+    return preferences;
 }

@@ -22,7 +22,7 @@ export async function definePreferences(req: Request, res: Response) {
 export async function getPreferences(req: Request, res: Response){
     const userId = Number(req.params.id);
 
-    const preference = await preferencesService.getPreferences(userId);
+    const preferences = await preferencesService.getPreferences(userId);
 
-    res.status(200).send(preference);
+    res.status(200).send(preferences);
 }
