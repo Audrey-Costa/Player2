@@ -6,5 +6,5 @@ export async function getProfile(req: Request, res: Response) {
 
     const profile = await usersService.getProfile(userId);
 
-    return profile;
+    res.status(200).send(profile);
 }
