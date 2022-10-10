@@ -100,51 +100,51 @@ export default function Register() {
         <>
           <FormContainer>
             <form action="" onSubmit={(event) => handleSubmit(event)}>
-              <div className="brand">
-                <img src={Logo} alt="logo" />
-                <h1>snappy</h1>
-              </div>
-              <input
-                type="text"
-                placeholder="First Name"
-                name="firstName"
-                onChange={(e) => handleChange(e)}
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                name="lastName"
-                onChange={(e) => handleChange(e)}
-              />
-              <input
-                type="number"
-                min={13}
-                max={90}
-                name="age"
-                onChange={(e) => handleChange(e)}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                onChange={(e) => handleChange(e)}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={(e) => handleChange(e)}
-              />
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                name="confirmPassword"
-                onChange={(e) => handleChange(e)}
-              />
-              <button type="submit">Create User</button>
-              <span>
-                Already have an account ? <Link to="/login">Login.</Link>
-              </span>
+                <div className="brand">
+                    <img src={Logo} alt="logo" />
+                    <h1>snappy</h1>
+                </div>
+                <input
+                    type="text"
+                    placeholder="First Name"
+                    name="firstName"
+                    onChange={(e) => handleChange(e)}
+                />
+                <input
+                    type="text"
+                    placeholder="Last Name"
+                    name="lastName"
+                    onChange={(e) => handleChange(e)}
+                />
+                <input
+                    type="number"
+                    min={13}
+                    max={90}
+                    name="age"
+                    onChange={(e) => handleChange(e)}
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    onChange={(e) => handleChange(e)}
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    onChange={(e) => handleChange(e)}
+                />
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    name="confirmPassword"
+                    onChange={(e) => handleChange(e)}
+                />
+                <button type="submit">Create User</button>
+                <span>
+                    Already have an account ? <Link to="/login">Login.</Link>
+                </span>
             </form>
           </FormContainer>
           <ToastContainer />
