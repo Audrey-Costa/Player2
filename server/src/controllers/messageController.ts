@@ -10,5 +10,5 @@ export async function sendMessage(req: Request, res: Response) {
     res.status(201);
 }
 
-export async function receiveMessage(req: Request, res: Response) {
+export async function getMessages(req: Request, res: Response) {
 }
