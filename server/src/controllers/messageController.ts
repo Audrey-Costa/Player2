@@ -1,7 +1,11 @@
 import { Request, Response } from "express";
-import mongoDB from "../db/mongoDB";
-import { ObjectId } from "mongodb";
+import { TypeMessage } from "../types/messageType";
+import * as messageServices from "../services/messageServices";
 
 export async function sendMessage(req: Request, res: Response) {
-    const message = req.body;
+    const message: TypeMessage = req.body;
+
+    await messageServices.sendMessage(message);
+
+    res.status(201);
 }
