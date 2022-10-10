@@ -12,6 +12,8 @@ export async function registerUser(newUser: RegisterAuth) {
         throw {type: "Conflict", message: "This email is already in use!"};
     }
     newUser.password = bcrypt.hashSync(newUser.password, 10);
+    newUser.age = Number(newUser.age);
+    
     await authRepository.registerUser(newUser);
 }
 
