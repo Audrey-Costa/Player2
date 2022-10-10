@@ -1,8 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
 export default async function errorHandlerMiddleware(error: Error | any, req: Request, res: Response, next: NextFunction){
-    console.log(error)
-    
     if (error.type === "Not Found"){
         return res.status(404).send(error.message)
     }

@@ -75,24 +75,24 @@ export default function Register() {
         return true;
       }
 
-      async function handleSubmit(event){
+      function handleSubmit(event){
         event.preventDefault();
         if (handleValidation()) {
-          const { firstName, lastName, age, email, password, confirmPassword } = values;
-          const api = process.env.REACT_APP_API_HOST + "/register"
-          const { data } = await axios.post(api, {
-            firstName,
-            lastName,
-            age: Number(age),
-            email,
-            password,
-            confirmPassword
-          });
-    
-          if (data.status === false) {
-            toast.error("👾" + data.msg, toastOptions);
-          }
-            navigate("/login");
+            const { firstName, lastName, age, email, password, confirmPassword } = values;
+            const api = process.env.REACT_APP_API_HOST + "/register"
+            const promise = axios.post(api, {
+                firstName,
+                lastName,
+                age: Number(age),
+                email,
+                password,
+                confirmPassword
+            });
+            promise.then(()=>{
+                navigate("/login");
+            }).catch((err)=>{
+                toast.error("👾" + err.response.data, toastOptions);
+            })
         }
     }
 
