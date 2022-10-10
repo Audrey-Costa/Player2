@@ -12,5 +12,7 @@ export async function sendMessage(message: TypeMessage){
 export async function getMessages(userId: number, friendId: number){
     const messages = await messageRepository.getMessages(userId, friendId);
 
-    return messages;
+    const messagesGet = messages.messagesSended.concat(messages.messagesReceiveded)
+
+    return messagesGet;
 }
