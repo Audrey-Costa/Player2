@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { getProfile } from "../controllers/userController";
+import { getProfile } from "../controllers/usersController";
 import { validateToken } from "../middlewares/validateToken";
 
 const userRouter = Router();
 
-userRouter.get("/profile", validateToken, getProfile);
+userRouter.get("/profile/:id", validateToken, getProfile);
 
 export default userRouter;
