@@ -7,7 +7,7 @@ export async function sendMessage(req: Request, res: Response){
 
     await messageServices.sendMessage(message);
 
-    res.status(201);
+    res.sendStatus(201);
 }
 
 export async function getMessages(req: Request, res: Response){
