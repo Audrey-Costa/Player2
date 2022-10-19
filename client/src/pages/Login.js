@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
     const navigate = useNavigate();
-    const [values, setValues] = useState({ password: "", password: "" });
+    const [values, setValues] = useState({ email: "", password: "" });
     const toastOptions = {
         position: "bottom-right",
         autoClose: 8000,
@@ -21,7 +21,7 @@ export default function Login() {
         if (localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)) {
         navigate("/");
         }
-    }, []);
+    });
 
     function handleChange(event){
         setValues({ ...values, [event.target.name]: event.target.value });
@@ -44,6 +44,7 @@ export default function Login() {
         if(validateForm()){
             const { email, password } = values;
             const api = process.env.REACT_APP_API_HOST + "/login"
+            console.log(api, process.env.NODE_ENV)
             const promise = axios.post(api, {
             email,
             password,
